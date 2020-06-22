@@ -98,24 +98,6 @@
           "description": "Specifies the VM size of the Compute Instance to create under Azure Machine Learning workspace."
         }
       },
-      "SSHAccess":{
-        "type": "string",
-        "defaultValue": "Disabled",
-          "allowedValues": [
-            "Disabled",
-            "Enabled"
-          ],
-          "metadata": {
-            "description": "Specifies whether SSH access should be enabled for compute instance"
-          }
-      },      
-      "adminUserSSHPublicKey": {
-        "type": "string",
-        "defaultValue": "",
-        "metadata": {
-          "description": "Specifies the SSH Public Key to use for SSH access to the Compute Instance."
-        } 
-      },        
       "location": {
         "type": "string",
         "allowedValues": [
@@ -163,10 +145,7 @@
             {
               "VMSize" : "[parameters('VMSize')]",                    
               "applicationSharingPolicy": "Personal",
-              "sshSettings": {
-                "sshPublicAccess": "[parameters('SSHAccess')]",
-                "adminPublicKey": "[parameters('adminUserSSHPublicKey')]"
-              }
+              
             }
         }
       }
